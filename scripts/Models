@@ -9,8 +9,8 @@ General PC, Mini PC, Proxmox VE VM, VMware VM: x86/64
 
 # 小米系列
 Xiaomi 4A Gigabit Edition,Xiaomi R4A: ramips/mt7621
-Redmi AX6,Redmi AX6000: ipq807x/generic
-Xiaomi AX3600,Xiaomi AX9000: ipq807x/generic
+Redmi AX6,Redmi AX6000: ipq806x/generic
+Xiaomi AX3600,Xiaomi AX9000: ipq806x/generic
 
 # 华硕系列
 ASUS RT-ACRH17,ASUS RT-AC58U: ipq40xx/generic
