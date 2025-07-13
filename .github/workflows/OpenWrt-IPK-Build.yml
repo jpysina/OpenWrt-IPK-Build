@@ -166,8 +166,8 @@ jobs:
 
       - name: 准备SDK
         run: |
-          SDK_URL1="https://downloads.immortalwrt.org/releases/21.02.0/targets/${{ env.arch_path }}/immortalwrt-sdk-21.02.0-${{ env.arch-path }}_gcc-13.3.0_musl.Linux-x86_64.tar.xz"
-          SDK_URL2="https://downloads.immortalwrt.org/releases/21.02.0/targets/${{ env.arch_path }}/immortalwrt-sdk-21.02.0-${{ env.arch-path }}_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.xz"
+          SDK_URL1="https://downloads.immortalwrt.org/releases/21.02.0/targets/${{ env.arch_path }}/immortalwrt-sdk-21.02.0-${{ env.arch-path }}_gcc-8.4.0_musl.Linux-x86_64.tar.xz"
+          SDK_URL2="https://downloads.immortalwrt.org/releases/21.02.0/targets/${{ env.arch_path }}/immortalwrt-sdk-21.02.0-${{ env.arch-path }}_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz"
           wget --spider -q "$SDK_URL1" && wget "$SDK_URL1" || wget "$SDK_URL2"
           mkdir OpenWrt-${{ env.arch-path }} && tar -I 'zstd -d' -xf immortalwrt-*.tar.xz -C OpenWrt-${{ env.arch-path }} --strip-components 1 && rm immortalwrt-*.tar.xz
 
