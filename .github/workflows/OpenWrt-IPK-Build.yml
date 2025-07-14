@@ -31,7 +31,7 @@ env:
 
 jobs:
   matrix:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id || !github.event.sender.id
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -133,7 +133,7 @@ jobs:
 
   build:
     name: Build ${{ matrix.target }} (${{ matrix.arch }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: matrix
     strategy:
       matrix:
@@ -147,6 +147,11 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
+      - name: 设置Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
       - name: 加载环境
         run: |
           sudo apt-get update -qq
@@ -242,4 +247,4 @@ jobs:
         continue-on-error: true  
         with:  
           retain_days: 1  
-          keep_minimum_runs: 0 
+          keep_minimum_runs: 0
