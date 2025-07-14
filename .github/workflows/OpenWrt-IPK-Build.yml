@@ -31,7 +31,7 @@ env:
 
 jobs:
   matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id || !github.event.sender.id
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -146,6 +146,7 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
+
       - name: 加载环境
         run: |
           sudo apt-get update -qq
@@ -241,4 +242,4 @@ jobs:
         continue-on-error: true  
         with:  
           retain_days: 1  
-          keep_minimum_runs: 0
+          keep_minimum_runs: 0 
